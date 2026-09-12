@@ -1,0 +1,165 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cinema Atlas — Explore Great Films</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Cinema Atlas is a visual movie library for exploring great films, ratings, genres, IMDb Top 250 titles and short film-focused analyses.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Cinema Atlas">
+<meta name="theme-color" content="#07110d">
+<link rel="canonical" href="https://YOURUSERNAME.github.io/cinema-atlas/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Cinema Atlas — Explore Great Films">
+<meta property="og:description" content="Explore a visual movie library with posters, ratings, genres and film-focused analysis.">
+<meta property="og:url" content="https://YOURUSERNAME.github.io/cinema-atlas/">
+<meta property="og:site_name" content="Cinema Atlas">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cinema Atlas — Explore Great Films">
+<meta name="twitter:description" content="Explore films through posters, ratings, genres and short movie-focused analysis.">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"Cinema Atlas",
+  "url":"https://YOURUSERNAME.github.io/cinema-atlas/",
+  "description":"A visual movie library for exploring films, ratings, genres and film-focused analysis.",
+  "potentialAction":{
+    "@type":"SearchAction",
+    "target":"https://YOURUSERNAME.github.io/cinema-atlas/?q={search_term_string}",
+    "query-input":"required name=search_term_string"
+  }
+}
+</script>
+<style>
+:root{--bg:#07110d;--card:#0d1b15;--card2:#10241b;--text:#edf7f0;--muted:#9eb3a6;--accent:#b8ff5a;--line:#20372b}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at 80% 0,#173a28 0,#07110d 38%);color:var(--text);line-height:1.6}
+nav{position:sticky;top:0;z-index:10;background:#07110dec;border-bottom:1px solid var(--line);padding:15px 6%;display:flex;justify-content:space-between}.logo{font-weight:900}.logo span{color:var(--accent)}nav a{color:var(--muted);text-decoration:none;margin-left:22px}
+.hero,section{max-width:1150px;margin:auto;padding:65px 6%}.hero{padding-top:85px}.eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:2px;font-size:12px}
+h1{font-size:clamp(44px,7vw,76px);line-height:1;letter-spacing:-3px;margin:16px 0}.hero p,.section-note{color:var(--muted);max-width:750px}.btn{display:inline-block;margin-top:15px;padding:11px 17px;border-radius:9px;background:var(--accent);color:#08110b;font-weight:800;text-decoration:none}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:1150px;margin:auto;padding:0 6% 40px}.stat,.movie{background:var(--card);border:1px solid var(--line);border-radius:15px}.stat{padding:18px}.stat b{display:block;color:var(--accent);font-size:26px}.stat span,.year{color:var(--muted);font-size:13px}
+h2{font-size:34px;margin:0 0 5px}.controls{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}input,select{background:var(--card);color:var(--text);border:1px solid var(--line);padding:12px 14px;border-radius:9px}input{flex:1;min-width:250px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.movie{padding:0;overflow:hidden;position:relative;background:linear-gradient(180deg,var(--card),#09140f);transition:.22s;box-shadow:0 10px 25px #0004}
+.movie:hover{border-color:#4b7657;transform:translateY(-5px);box-shadow:0 18px 35px #0006}
+.poster{height:300px;position:relative;background:linear-gradient(135deg,#13271d,#07110d);overflow:hidden}
+.poster img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s,filter .35s}
+.movie:hover .poster img{transform:scale(1.04);filter:saturate(1.08)}
+.poster-fallback{height:100%;display:flex;align-items:flex-end;padding:22px;font-weight:800;font-size:22px;line-height:1.05;color:#edf7f0}
+.movie-body{padding:15px 17px 17px}
+.movie-body h3{font-size:18px;line-height:1.2;margin:0 0 3px}
+.movie-body .rating{float:right;color:var(--accent);font-weight:800}
+.movie-body .tag{margin-top:10px}
+.movie-body p{color:var(--muted);font-size:13px;min-height:43px}
+.movie-body button{width:100%;padding:9px;background:transparent;color:var(--text);border:1px solid var(--line);border-radius:8px;cursor:pointer}
+.movie-body button:hover{color:var(--accent);border-color:var(--accent)}.movie h3{font-size:18px;line-height:1.2;margin:0 0 3px}.rating{float:right;color:var(--accent);font-weight:800}.tag{display:inline-block;font-size:11px;background:var(--card2);border:1px solid var(--line);padding:4px 7px;border-radius:20px;margin:10px 4px 6px 0}.movie p{color:var(--muted);font-size:13px;min-height:43px}.movie button{width:100%;padding:9px;background:transparent;color:var(--text);border:1px solid var(--line);border-radius:8px;cursor:pointer}.movie button:hover{color:var(--accent);border-color:var(--accent)}
+footer{text-align:center;border-top:1px solid var(--line);padding:30px;color:var(--muted)}.modal{display:none;position:fixed;inset:0;background:#000c;z-index:20;padding:5%;overflow:auto}.box{max-width:700px;margin:5vh auto;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px}.close{float:right;background:none;border:0;color:var(--muted);font-size:26px;cursor:pointer}.box p{color:var(--muted)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:650px){.grid,.stats{grid-template-columns:1fr 1fr}nav .links{display:none}}@media(max-width:430px){.grid,.stats{grid-template-columns:1fr}}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:650px){.grid{grid-template-columns:repeat(2,1fr)}.poster{height:250px}}
+@media(max-width:430px){.grid{grid-template-columns:1fr}.poster{height:330px}}
+</style></head><body>
+<nav><div class="logo">Cinema<span>Atlas</span></div><div class="links"><a href="#library">My Library</a><a href="#discover">Discover</a><a href="#top250">IMDb Top 250</a></div></nav>
+<header class="hero"><div class="eyebrow">A movie library for everyone</div><h1>Great films. One place to explore.</h1><p>Browse films through a visual library of posters, ratings and short movie-focused analyses. Search, filter and explore.</p><a class="btn" href="#library">Open My Library</a></header>
+<div class="stats"><div class="stat"><b>52</b><span>movies in your library</span></div><div class="stat"><b>24</b><span>discovery titles</span></div><div class="stat"><b>★ 9.3</b><span>highest rating in library</span></div><div class="stat"><b>Search</b><span>titles and genres instantly</span></div></div>
+
+<section id="library"><h2>🎬 My Movie Library</h2><p class="section-note">Movies marked as watched.</p>
+<div class="controls"><input id="ls" placeholder="Search movies in the library..." oninput="render('l')"><select id="lg" onchange="render('l')"><option value="all">All genres</option></select><select id="lo" onchange="render('l')"><option value="rating">Highest rated</option><option value="title">Title A–Z</option><option value="year">Newest</option></select></div><div id="lgd" class="grid"></div></section>
+
+<section id="discover"><h2>🌟 Discover</h2><p class="section-note">Popular and highly rated films to discover.</p>
+<div class="controls"><input id="ds" placeholder="Search discovery movies..." oninput="render('d')"><select id="dg" onchange="render('d')"><option value="all">All genres</option></select><select id="do" onchange="render('d')"><option value="rating">Highest rated</option><option value="title">Title A–Z</option><option value="year">Newest</option></select></div><div id="dgd" class="grid"></div></section>
+
+
+<section id="top250">
+<h2>🏆 IMDb Top 250</h2>
+<p class="section-note">The official IMDb Top 250 is a live chart based on ratings from regular IMDb voters. The ranking can change over time.</p>
+<a class="btn" href="https://www.imdb.com/chart/top/" target="_blank" rel="noopener">Open the current IMDb Top 250 ↗</a>
+<div class="controls" style="margin-top:24px">
+<input id="topSearch" placeholder="Search Top 250 titles..." oninput="renderTop()">
+<select id="topSort" onchange="renderTop()"><option value="rank">IMDb rank</option><option value="rating">Rating</option><option value="title">Title A–Z</option><option value="year">Year</option></select>
+</div>
+<div id="topGrid" class="grid"></div>
+</section>
+<section><h2>About</h2><p class="section-note">Movie analysis focuses on the film itself — story, characters, performances, themes, atmosphere and filmmaking. The writing is kept conversational and specific rather than sounding like a template or automated summary.</p></section>
+<footer>
+<div id="modal" class="modal" onclick="if(event.target===this)closeM()"><div class="box"><button class="close" onclick="closeM()">×</button><div id="mc"></div></div></div>
+<script>
+const watched=[["Inception", 2010, 8.8, "Sci-Fi, Thriller"], ["Interstellar", 2014, 8.7, "Sci-Fi, Drama"], ["Oppenheimer", 2023, 8.2, "Biography, Drama"], ["Forrest Gump", 1994, 8.8, "Drama, Romance"], ["The Lord of the Rings: The Fellowship of the Ring", 2001, 8.9, "Fantasy, Adventure"], ["The Lord of the Rings: The Two Towers", 2002, 8.8, "Fantasy, Adventure"], ["The Lord of the Rings: The Return of the King", 2003, 9.0, "Fantasy, Adventure"], ["Baby Driver", 2017, 7.5, "Action, Crime"], ["Back to the Future", 1985, 8.5, "Sci-Fi, Comedy"], ["Dead Poets Society", 1989, 8.1, "Drama"], ["The Matrix", 1999, 8.7, "Sci-Fi, Action"], ["The Shawshank Redemption", 1994, 9.3, "Drama"], ["The Wolf of Wall Street", 2013, 8.2, "Biography, Crime"], ["Shutter Island", 2010, 8.2, "Mystery, Thriller"], ["The Intouchables", 2011, 8.5, "Comedy, Drama"], ["Catch Me If You Can", 2002, 8.1, "Biography, Crime"], ["Fight Club", 1999, 8.8, "Drama"], ["The Silence of the Lambs", 1991, 8.6, "Crime, Thriller"], ["Se7en", 1995, 8.6, "Crime, Mystery"], ["The Truman Show", 1998, 8.2, "Drama, Comedy"], ["The Prestige", 2006, 8.5, "Mystery, Thriller"], ["The Departed", 2006, 8.5, "Crime, Thriller"], ["Parasite", 2019, 8.5, "Thriller, Drama"], ["Once Upon a Time in Hollywood", 2019, 7.6, "Comedy, Drama"], ["American Psycho", 2000, 7.6, "Crime, Drama"], ["The Usual Suspects", 1995, 8.5, "Crime, Mystery"], ["Goodfellas", 1990, 8.7, "Crime, Drama"], ["Green Book", 2018, 8.2, "Drama, Comedy"], ["Batman Begins", 2005, 8.2, "Action, Crime"], ["The Dark Knight", 2008, 9.1, "Action, Crime"], ["The Dark Knight Rises", 2012, 8.4, "Action, Drama"], ["Whiplash", 2014, 8.5, "Drama, Music"], ["The Aviator", 2004, 7.5, "Biography, Drama"], ["Life of Pi", 2012, 7.9, "Adventure, Drama"], ["Pan's Labyrinth", 2006, 8.2, "Fantasy, Drama"], ["Oldboy", 2003, 8.1, "Mystery, Thriller"], ["Anora", 2024, 7.4, "Drama, Comedy"], ["Inglourious Basterds", 2009, 8.4, "War, Drama"], ["Fear", 1996, 6.2, "Thriller, Drama"], ["Good Will Hunting", 1997, 8.3, "Drama"], ["Gone Girl", 2014, 8.1, "Mystery, Thriller"], ["The Sixth Sense", 1999, 8.2, "Mystery, Thriller"], ["The Green Mile", 1999, 8.6, "Drama, Fantasy"], ["Taxi Driver", 1976, 8.2, "Crime, Drama"], ["A Beautiful Mind", 2001, 8.2, "Biography, Drama"], ["The Machinist", 2004, 7.6, "Mystery, Thriller"], ["The Godfather", 1972, 9.2, "Crime, Drama"], ["The Godfather Part II", 1974, 9.0, "Crime, Drama"], ["The Gentlemen", 2019, 7.8, "Crime, Comedy"], ["The Great Gatsby", 2013, 7.2, "Drama, Romance"], ["Snatch", 2000, 8.2, "Crime, Comedy"], ["The Social Network", 2010, 7.8, "Biography, Drama"]],discover=[["Pulp Fiction", 1994, 8.8, "Crime, Drama"], ["The Good, the Bad and the Ugly", 1966, 8.8, "Western"], ["Saving Private Ryan", 1998, 8.6, "War, Drama"], ["Gladiator", 2000, 8.5, "Action, Drama"], ["Django Unchained", 2012, 8.5, "Western, Drama"], ["Titanic", 1997, 7.9, "Drama, Romance"], ["Avatar", 2009, 7.9, "Sci-Fi, Adventure"], ["La La Land", 2016, 8.0, "Musical, Romance"], ["Heat", 1995, 8.3, "Crime, Drama"], ["There Will Be Blood", 2007, 8.2, "Drama"], ["Alien", 1979, 8.5, "Horror, Sci-Fi"], ["Aliens", 1986, 8.4, "Action, Sci-Fi"], ["Jaws", 1975, 8.1, "Thriller, Adventure"], ["Léon: The Professional", 1994, 8.5, "Crime, Thriller"], ["Raiders of the Lost Ark", 1981, 8.4, "Adventure, Action"], ["Life Is Beautiful", 1997, 8.6, "Comedy, Drama"], ["Ocean's Eleven", 2001, 7.7, "Crime, Comedy"], ["Braveheart", 1995, 8.3, "History, Drama"], ["Jurassic Park", 1993, 8.2, "Adventure, Sci-Fi"], ["Pirates of the Caribbean: The Curse of the Black Pearl", 2003, 8.1, "Adventure, Fantasy"], ["Scarface", 1983, 8.3, "Crime, Drama"], ["Rocky", 1976, 8.1, "Drama, Sport"], ["Eternal Sunshine of the Spotless Mind", 2004, 8.3, "Romance, Sci-Fi"], ["Apocalypse Now", 1979, 8.4, "War, Drama"]];
+const blurbs={
+"Inception":"A layered science-fiction thriller about dreams, memory, guilt and the difficulty of separating reality from imagination.",
+"Interstellar":"An emotional space epic about exploration, family, sacrifice and humanity's search for a future among the stars.",
+"Oppenheimer":"A historical drama following the scientist behind the Manhattan Project and the personal and political consequences of his work.",
+"Forrest Gump":"A warm, bittersweet story following an extraordinary life through friendship, love, loss and changing American history.",
+"The Lord of the Rings: The Fellowship of the Ring":"An epic fantasy adventure about friendship, courage and a dangerous journey to destroy a powerful ring.",
+"The Dark Knight":"A tense crime drama about Batman's struggle with a chaotic enemy who tests the limits of justice and morality.",
+"The Godfather":"A landmark crime saga about family, loyalty, power and the difficult transformation of a reluctant son.",
+"Parasite":"A darkly funny thriller that contrasts two families whose lives collide in unexpected and increasingly dangerous ways.",
+"Whiplash":"An intense drama about ambition, discipline and the demanding relationship between a young drummer and his teacher.",
+"Good Will Hunting":"A character-driven drama about a gifted young man confronting his past while learning to accept friendship and opportunity.",
+"Fight Club":"A provocative psychological drama exploring identity, alienation and a man's search for meaning.",
+"The Truman Show":"A clever dramatic comedy about a man discovering that the world around him may not be what it seems.",
+"Se7en":"A dark detective thriller following two investigators as they pursue a killer whose crimes are connected to the seven deadly sins.",
+"Shutter Island":"A psychological mystery in which a marshal investigates a disappearance at an isolated hospital and begins questioning what he sees.",
+"Back to the Future":"A fast, funny time-travel adventure about a teenager who accidentally changes the past and must repair the future.",
+"Goodfellas":"A stylish crime drama following a man's rise through organized crime and the consequences that follow.",
+"Ocean's Eleven":"A stylish heist film built around a carefully assembled team attempting an ambitious Las Vegas robbery.",
+"Saving Private Ryan":"A powerful World War II drama focused on a dangerous mission, friendship and the human cost of war.",
+"Pulp Fiction":"A nonlinear crime film connecting several memorable stories through dark humor, coincidence and unforgettable characters.",
+"Gladiator":"An epic historical drama about a Roman general forced into slavery who fights to regain his freedom and honor."
+};
+function genres(a){return [...new Set(a.flatMap(x=>x[3].split(', ')))].sort()}
+function fill(id,a){let s=document.getElementById(id);genres(a).forEach(g=>s.insertAdjacentHTML('beforeend','<option>'+g+'</option>'))}
+fill('lg',watched);fill('dg',discover);
+function get(a,prefix){let q=document.getElementById(prefix+'s').value.toLowerCase(),g=document.getElementById(prefix+'g').value,sort=document.getElementById(prefix+'o').value;
+a=a.filter(x=>x[0].toLowerCase().includes(q)&&(g==='all'||x[3].split(', ').includes(g)));
+if(sort==='rating')a.sort((x,y)=>y[2]-x[2]);if(sort==='title')a.sort((x,y)=>x[0].localeCompare(y[0]));if(sort==='year')a.sort((x,y)=>y[1]-x[1]);return a}
+function posterUrl(title){
+  return 'https://en.wikipedia.org/api/rest_v1/page/summary/'+encodeURIComponent(title);
+}
+function card(m,type){
+  let safe=m[0].replaceAll("'","\\'");
+  return '<article class="movie"><div class="poster"><img src="" data-title="'+m[0].replaceAll('"','&quot;')+'" alt="'+m[0]+' poster" loading="lazy"></div><div class="movie-body"><span class="rating">★ '+m[2]+'</span><h3>'+m[0]+'</h3><span class="year">'+m[1]+'</span><br><span class="tag">'+m[3]+'</span><p>'+(blurbs[m[0]]||'A highly regarded film worth exploring for its story, characters, performances, themes, atmosphere and filmmaking.')+'</p><button onclick="openM(\''+safe+'\',\''+type+'\')">View analysis</button></div></article>'
+}
+async function loadPosters(root){
+  const imgs=[...root.querySelectorAll('.poster img')];
+  await Promise.all(imgs.map(async img=>{
+    try{
+      const r=await fetch(posterUrl(img.dataset.title));
+      const d=await r.json();
+      if(d.thumbnail&&d.thumbnail.source) img.src=d.thumbnail.source;
+      else throw new Error('No thumbnail');
+    }catch(e){
+      img.style.display='none';
+      img.parentElement.innerHTML='<div class="poster-fallback">'+img.dataset.title+'</div>';
+    }
+  }));
+}
+function render(t){
+  let a=t==='l'?get(watched,'l'):get(discover,'d');
+  const root=document.getElementById(t==='l'?'lgd':'dgd');
+  root.innerHTML=a.map(x=>card(x,t)).join('')||'<p>No movies found.</p>';
+  loadPosters(root);
+}
+function openM(title,type){let a=type==='l'?watched:discover,m=a.find(x=>x[0]===title),b=blurbs[m[0]]||'A highly regarded film worth exploring for its story, characters, performances, themes, atmosphere and filmmaking.';document.getElementById('mc').innerHTML='<div style="color:var(--accent);font-size:13px">'+m[3]+' · '+m[1]+' · ★ '+m[2]+'</div><h2>'+m[0]+'</h2><p>'+b+'</p><h3>Film analysis</h3><p>This page focuses on the movie itself — its plot, characters, performances, themes, atmosphere and filmmaking.</p>';document.getElementById('modal').style.display='block'}
+function closeM(){document.getElementById('modal').style.display='none'}
+render('l');render('d');
+const imdbTop=[["The Shawshank Redemption", 1994, 9.3, 1], ["The Godfather", 1972, 9.2, 2], ["The Dark Knight", 2008, 9.1, 3], ["The Godfather Part II", 1974, 9.0, 4], ["The Lord of the Rings: The Return of the King", 2003, 9.0, 5], ["12 Angry Men", 1957, 9.0, 6], ["Schindler's List", 1993, 9.0, 7], ["The Lord of the Rings: The Fellowship of the Ring", 2001, 8.9, 8], ["Pulp Fiction", 1994, 8.8, 9], ["The Lord of the Rings: The Two Towers", 2002, 8.8, 10], ["The Good, the Bad and the Ugly", 1966, 8.8, 11], ["Forrest Gump", 1994, 8.8, 12], ["Fight Club", 1999, 8.8, 13], ["Inception", 2010, 8.8, 14], ["The Matrix", 1999, 8.7, 16], ["Interstellar", 2014, 8.7, 17], ["Goodfellas", 1990, 8.7, 18], ["One Flew Over the Cuckoo's Nest", 1975, 8.6, 19], ["Se7en", 1995, 8.6, 20], ["The Silence of the Lambs", 1991, 8.6, 21], ["It's a Wonderful Life", 1946, 8.6, 22], ["Seven Samurai", 1954, 8.6, 24], ["Saving Private Ryan", 1998, 8.6, 25], ["City of God", 2002, 8.6, 26], ["The Green Mile", 1999, 8.6, 27], ["Life Is Beautiful", 1997, 8.6, 28], ["Terminator 2: Judgment Day", 1991, 8.6, 29], ["Back to the Future", 1985, 8.5, 30], ["The Pianist", 2002, 8.5, 31], ["Gladiator", 2000, 8.5, 32], ["The Departed", 2006, 8.5, 33], ["The Prestige", 2006, 8.5, 34], ["Whiplash", 2014, 8.5, 35], ["The Intouchables", 2011, 8.5, 36], ["Parasite", 2019, 8.5, 37], ["The Usual Suspects", 1995, 8.5, 38], ["American History X", 1998, 8.5, 39], ["Léon: The Professional", 1994, 8.5, 40], ["The Pianist", 2002, 8.5, 41]];
+function renderTop(){
+ let q=document.getElementById('topSearch').value.toLowerCase();
+ let a=imdbTop.filter(x=>x[0].toLowerCase().includes(q));
+ let s=document.getElementById('topSort').value;
+ if(s==='rating')a.sort((x,y)=>y[2]-x[2]);
+ if(s==='title')a.sort((x,y)=>x[0].localeCompare(y[0]));
+ if(s==='year')a.sort((x,y)=>y[1]-x[1]);
+ if(s==='rank')a.sort((x,y)=>x[3]-y[3]);
+ const root=document.getElementById('topGrid');
+ root.innerHTML=a.map(x=>`<article class="movie"><div class="poster"><img src="" data-title="${x[0]}" alt="${x[0]} poster" loading="lazy"></div><div class="movie-body"><span class="rating">#${x[3]} · ★ ${x[2]}</span><h3>${x[0]}</h3><span class="year">${x[1]}</span><br><span class="tag">IMDb Top 250</span><p>Ranked among IMDb's Top 250 feature films. The current ranking can change.</p><button onclick="openTop('${x[0].replaceAll("'","\\'")}')">View film</button></div></article>`).join('') || '<p>No titles found.</p>';
+ loadPosters(root);
+}
+function openTop(title){
+ const m=imdbTop.find(x=>x[0]===title);
+ const existing=watched.find(x=>x[0]===title);
+ document.getElementById('mc').innerHTML='<div style="color:var(--accent);font-size:13px">IMDb Top 250 · #'+m[3]+' · ★ '+m[2]+' · '+m[1]+'</div><h2>'+m[0]+'</h2><p>'+(blurbs[m[0]]||'A highly regarded film worth exploring for its story, characters, performances, themes, atmosphere and filmmaking.')+'</p><h3>Film analysis</h3><p>This page focuses on the movie itself — its plot, characters, performances, themes, atmosphere and filmmaking.</p>';
+ document.getElementById('modal').style.display='block';
+}
+renderTop();
+
+</script></body></html>
